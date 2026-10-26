@@ -17,4 +17,6 @@ public interface GommeRepository extends JpaRepository<Gomme, Long> {
     List<Gomme> findByNoleggio(String noleggio);
 
     List<Gomme> findBySeason(Season season);
+
+    void deleteByTarga(String targa);
 }

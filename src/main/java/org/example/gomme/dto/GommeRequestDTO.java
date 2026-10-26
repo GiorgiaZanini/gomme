@@ -1,4 +1,4 @@
-package org.example.gomme.model.DTO;
+package org.example.gomme.dto;
 
 import org.example.gomme.model.Area;
 import org.example.gomme.model.Edificio;

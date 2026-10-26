@@ -1,8 +1,11 @@
 package org.example.gomme.controller;
 
+import jakarta.validation.Valid;
+import org.example.gomme.dto.AddGommeDTO;
 import org.example.gomme.model.Gomme;
 import org.example.gomme.model.Season;
 import org.example.gomme.service.GommeService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,9 +36,17 @@ public class GommeController {
         return ResponseEntity.ok(gommeService.findByCliente(cliente));
     }
 
+    /*
     @GetMapping("/misura")
     public ResponseEntity<List<Gomme>> findByMisura(@RequestParam(name = "misura") String misura) {
         return ResponseEntity.ok(gommeService.findByMisura(misura));
+    }
+    */
+
+    @GetMapping("/misura/{misura}")
+    public ResponseEntity<List<Gomme>> findByMisura(@PathVariable String misura) {
+        String misuraVera = misura.replace("-", "/");
+        return ResponseEntity.ok(gommeService.findByMisura(misuraVera));
     }
 
     @GetMapping("/noleggio/{noleggio}")
@@ -46,5 +57,16 @@ public class GommeController {
     @GetMapping("/stagione/{season}")
     public ResponseEntity<List<Gomme>> findBySeason(@PathVariable Season season) {
         return ResponseEntity.ok(gommeService.findBySeason(season));
+    }
+
+    @PostMapping
+    public ResponseEntity<Gomme> create(@Valid @RequestBody AddGommeDTO gommaDto, @RequestParam(defaultValue = "false") boolean conferma) {
+        if (!conferma) {
+            List<Gomme> exists = gommeService.findByTarga(gommaDto.getTarga());
+            if (!exists.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.CONFLICT).body(exists);
+            }
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(gommeService.create(gommaDto));
     }
 }

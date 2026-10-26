@@ -28,10 +28,10 @@ public class Gomme {
     @Check(constraints = "misura ~ '^\\d+/\\d+R\\d+$'")
     private String misura;
 
-    @Column(name = "carico", nullable = false)
-    private int carico;
+    @Column(name = "carico")
+    private Integer carico;
 
-    @Column(name = "speed", nullable = false)
+    @Column(name = "speed")
     @Enumerated(EnumType.STRING)
     private Speed speed;
 
@@ -39,10 +39,10 @@ public class Gomme {
     @Enumerated(EnumType.STRING)
     private Season season;
 
-    @Column(name = "vendita", nullable = false)
-    private boolean vendita;
+    @Column(name = "vendita")
+    private Boolean vendita;
 
-    @Column(name = "noleggio", nullable = false)
+    @Column(name = "noleggio")
     private String noleggio;
 
     @Column(name = "edificio", nullable = false)
