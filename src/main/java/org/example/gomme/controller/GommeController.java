@@ -61,7 +61,11 @@ public class GommeController {
 
     @PostMapping
     public ResponseEntity<Gomme> create(@Valid @RequestBody AddGommeDTO gommaDto) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(gommeService.create(gommaDto));
+        Gomme response = gommeService.create(gommaDto);
+        if (response == null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
 }
