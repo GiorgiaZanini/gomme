@@ -60,13 +60,8 @@ public class GommeController {
     }
 
     @PostMapping
-    public ResponseEntity<Gomme> create(@Valid @RequestBody AddGommeDTO gommaDto, @RequestParam(defaultValue = "false") boolean conferma) {
-        if (!conferma) {
-            List<Gomme> exists = gommeService.findByTarga(gommaDto.getTarga());
-            if (!exists.isEmpty()) {
-                return ResponseEntity.status(HttpStatus.CONFLICT).body(exists);
-            }
-        }
+    public ResponseEntity<Gomme> create(@Valid @RequestBody AddGommeDTO gommaDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(gommeService.create(gommaDto));
     }
+
 }

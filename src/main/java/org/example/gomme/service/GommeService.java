@@ -7,6 +7,7 @@ import org.example.gomme.model.Season;
 import org.example.gomme.repository.GommeRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -44,6 +45,14 @@ public class GommeService {
 
     public Gomme create(AddGommeDTO gommaDTO) {
         Gomme gomma = GommeMapper.toEntity(gommaDTO);
+        List<Gomme> gommaCheck = gommeRepository.findByTarga(gomma.getTarga());
+        if (!gommaCheck.isEmpty()) {
+            for (Gomme g : gommaCheck) {
+                if (g.getEdificio().equals(gomma.getEdificio()) && g.getArea().equals(gomma.getArea()) && g.getFila() == gomma.getFila()) {
+                    return null;
+                }
+            }
+        }
         return gommeRepository.save(gomma);
     }
 
