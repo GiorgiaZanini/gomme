@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  text-transform: uppercase;
+}
+
+input, select, textarea {
+  text-transform: inherit;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+:root {
+  --colore-principale: #1f4e79;
+  --colore-testo: #222222;
+  --colore-bordo: #d0d7de;
+  --colore-riga-alternata: #f3f6f9;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  color: var(--colore-testo);
+}
+
+button {
+  font: inherit;
+  text-transform: inherit;
+  padding: 6px 14px;
+  border: 1px solid var(--colore-principale);
+  border-radius: 4px;
+  background: var(--colore-principale);
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.2);
+}

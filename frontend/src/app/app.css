@@ -1,0 +1,39 @@
+h1 {
+  text-align: center;
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+app-tabella {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  margin: 12px 0;
+}
+
+.barra {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.barra-destra {
+  justify-content: flex-end;
+}
+
+dialog {
+  width: min(500px, 90vw);
+  border: none;
+  border-radius: 8px;
+  padding: 20px 24px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}

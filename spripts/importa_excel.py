@@ -7,14 +7,6 @@ Uso:
     python importa_excel.py database_v04_OLD.xls           # manda le gomme al backend
 
 Dipendenze:  pip install xlrd requests
-
-Comando da terminale da lanciare nella cartella stessa:
-    sudo apt install python3.12-venv    // da lanciare solo la prima volta
-    rm -rf .venv                        // da lanciare solo la prima volta
-    python3 -m venv .venv               // da lanciare solo la prima volta
-    source .venv/bin/activate
-    python importa_excel.py /percorso/database_v04_OLD.xls --prova      // test se funziona
-    python importa_excel.py /percorso/database_v04_OLD.xls
 """
 
 import argparse

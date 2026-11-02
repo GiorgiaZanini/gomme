@@ -1,0 +1,82 @@
+<h2>FILTRI DI RICERCA</h2>
+
+<label>Targa
+  <input #targa type="text">
+  <button (click)="targa.value = ''">✕</button>
+</label>
+
+<label>Cliente
+  <input #cliente type="text">
+  <button (click)="cliente.value = ''">✕</button>
+</label>
+
+<label>Stagione
+  <select #stagione>
+    <option value=''></option>
+    <option value="WINTER">INVERNALE</option>
+    <option value="SUMMER">ESTIVA</option>
+    <option value="ALL_SEASONS">4 STAGIONI</option>
+  </select>
+  <button (click)="stagione.value = ''">✕</button>
+</label>
+
+<label>Vendita
+  <select #vendita>
+    <option value=''></option>
+    <option value="true">Sì</option>
+    <option value="false">No</option>
+  </select>
+  <button (click)="vendita.value = ''">✕</button>
+</label>
+
+<label>Noleggio
+  <input #noleggio type="text">
+  <button (click)="noleggio.value = ''">✕</button>
+</label>
+
+<label>Edificio
+  <select #edificio>
+    <option value=''></option>
+    <option value="MAGAZZINO">Magazzino</option>
+    <option value="OFFICINA">Officina</option>
+  </select>
+  <button (click)="edificio.value = ''">✕</button>
+</label>
+
+<label>Area
+  <select #area>
+    <option value=''></option>
+    <option value="UNO">1</option>
+    <option value="UNO_DIETRO">1 DIETRO</option>
+    <option value="UNO_DAVANTI">1 DAVANTI</option>
+    <option value="DUE">2</option>
+    <option value="TRE_DIETRO">3 DIETRO</option>
+    <option value="TRE_DAVANTI">3 DAVANTI</option>
+    <option value="TRE_SOTTO">3 SOTTO</option>
+    <option value="TRE_SOPRA">3 SOPRA</option>
+    <option value="QUATTRO_SOTTO">4 SOTTO</option>
+    <option value="QUATTRO_SOPRA">4 SOPRA</option>
+    <option value="CINQUE_SOTTO">5 SOTTO</option>
+    <option value="CINQUE_SOPRA">5 SOPRA</option>
+    <option value="SEI_SOTTO">6 SOTTO</option>
+    <option value="SEI_SOPRA">6 SOPRA</option>
+    <option value="SETTE_SOTTO">7 SOTTO</option>
+    <option value="SETTE_SOPRA">7 SOPRA</option>
+    <option value="OTTO_SOTTO">8 SOTTO</option>
+    <option value="OTTO_SOPRA">8 SOPRA</option>
+    <option value="CENTRO_SINISTRA">CENTRO SINISTRA</option>
+    <option value="CENTRO_DESTRA">CENTRO DESTRA</option>
+  </select>
+  <button (click)="area.value = ''">✕</button>
+</label>
+
+<label>Fila
+  <input #fila type="number" min="0">
+  <button (click)="fila.value = ''">✕</button>
+</label>
+
+<div class="azioni">
+  <button>CANCELLA CAMPI</button>
+  <button>CERCA</button>
+  <button (click)="annulla.emit()">ANNULLA</button>
+</div>

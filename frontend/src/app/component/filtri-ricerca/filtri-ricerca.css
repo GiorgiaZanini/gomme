@@ -1,0 +1,27 @@
+label {
+  display: grid;
+  grid-template-columns: 7em 1fr auto;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+input, select {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 4px 6px;
+}
+
+label button {
+  background: transparent;
+  color: var(--colore-testo);
+  border-color: var(--colore-bordo);
+  padding: 4px 8px;
+}
+
+.azioni {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 16px;
+}

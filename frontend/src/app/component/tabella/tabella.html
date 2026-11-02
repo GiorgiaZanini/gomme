@@ -1,0 +1,42 @@
+@if (gommeOrdinate().length === 0) {
+  <p class="nessun-risultato">Nessuna gomma trovata</p>
+} @else {
+  <table>
+    <thead>
+    <tr>
+      <th>Targa</th>
+      <th>Cliente</th>
+      <th>Misura</th>
+      <th>Carico</th>
+      <th>Velocità</th>
+      <th>Posizione</th>
+      <th>Stagione</th>
+      <th>Vendita</th>
+      <th>Noleggio</th>
+      <th>Edificio</th>
+      <th>Area</th>
+      <th>Fila</th>
+      <th>Quantità</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (g of gommeOrdinate(); track g.id) {
+        <tr>
+          <td>{{ g.targa }}</td>
+          <td>{{ g.cliente }}</td>
+          <td>{{ g.misura }}</td>
+          <td>{{ g.carico }}</td>
+          <td>{{ g.speed }}</td>
+          <td>{{ g.posizione }}</td>
+          <td>{{ stagioni[g.season] }}</td>
+          <td>{{ g.vendita === null ? '' : (g.vendita ? 'Sì' : 'No') }}</td>
+          <td>{{ g.noleggio }}</td>
+          <td>{{ edifici[g.edificio] }}</td>
+          <td>{{ aree[g.area] }}</td>
+          <td>{{ g.fila }}</td>
+          <td>{{ g.quantity }}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+}

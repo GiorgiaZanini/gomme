@@ -58,10 +58,6 @@ public class GommeService {
         return gommeRepository.save(gomma);
     }
 
-    public List<Gomme> createAll(List<Gomme> gomme) {
-        return gommeRepository.saveAll(gomme);
-    }
-
     public void delete(Gomme gomma) {
         gommeRepository.delete(gomma);
     }

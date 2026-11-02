@@ -17,6 +17,7 @@ public class GommeMapper {
         gomme.setCliente(gommeDTO.getCliente());
         gomme.setMisura(gommeDTO.getMisura());
         gomme.setCarico(gommeDTO.getCarico());
+        gomme.setPosizione(gommeDTO.getPosizione());
         gomme.setSpeed(gommeDTO.getSpeed());
         gomme.setSeason(gommeDTO.getSeason());
         gomme.setVendita(gommeDTO.getVendita());
