@@ -48,8 +48,10 @@ public class GommeService {
         List<Gomme> gommaCheck = gommeRepository.findByTarga(gomma.getTarga());
         if (!gommaCheck.isEmpty()) {
             for (Gomme g : gommaCheck) {
-                if (g.getEdificio().equals(gomma.getEdificio()) && g.getArea().equals(gomma.getArea()) && g.getFila() == gomma.getFila()) {
-                    return null;
+                if (g.getPosizione() == null || gomma.getPosizione() == null || g.getPosizione() == gomma.getPosizione()) {
+                    if (g.getEdificio().equals(gomma.getEdificio()) && g.getArea().equals(gomma.getArea()) && g.getFila() == gomma.getFila()) {
+                        return null;
+                    }
                 }
             }
         }

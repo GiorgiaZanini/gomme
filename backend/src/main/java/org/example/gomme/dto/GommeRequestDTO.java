@@ -1,22 +1,20 @@
 package org.example.gomme.dto;
 
-import org.example.gomme.model.Area;
-import org.example.gomme.model.Edificio;
-import org.example.gomme.model.Season;
-import org.example.gomme.model.Speed;
+import org.example.gomme.model.*;
 
 public record GommeRequestDTO(
         String targa,
         String cliente,
         String misura,
-        int carico,
+        Integer carico,
         Speed speed,
+        Posizione posizione,
         Season season,
-        boolean vendita,
+        Boolean vendita,
         String noleggio,
         Edificio edificio,
         Area area,
-        int fila,
-        int quantity
+        Integer fila,
+        Integer quantity
 ) {
 }

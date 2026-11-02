@@ -1,0 +1,1 @@
+docker run --name gomme-db -e POSTGRES_PASSWORD=gomme -e POSTGRES_DB=gomme -p 5434:5432 -d postgres:18

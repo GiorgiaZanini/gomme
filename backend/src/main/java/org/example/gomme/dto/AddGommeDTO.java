@@ -6,10 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.example.gomme.model.Area;
-import org.example.gomme.model.Edificio;
-import org.example.gomme.model.Season;
-import org.example.gomme.model.Speed;
+import org.example.gomme.model.*;
 
 @Getter
 @Setter
@@ -29,7 +26,7 @@ public final class AddGommeDTO {
 
     @JsonProperty("misura")
     @NotBlank
-    @Pattern(regexp = "^\\d+/\\d+R\\d+$")
+    @Pattern(regexp = "^\\d+/\\d+ R\\d+$")
     private String misura;
 
     @JsonProperty("carico")
@@ -37,6 +34,9 @@ public final class AddGommeDTO {
 
     @JsonProperty("speed")
     private Speed speed;
+
+    @JsonProperty("posizione")
+    private Posizione posizione;
 
     @JsonProperty("season")
     @NotNull

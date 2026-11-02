@@ -24,8 +24,8 @@ public class Gomme {
     private String cliente;
 
     @Column(name = "misura", nullable = false)
-    @Pattern(regexp = "^\\d+/\\d+R\\d+$")
-    @Check(constraints = "misura ~ '^\\d+/\\d+R\\d+$'")
+    @Pattern(regexp = "^\\d+/\\d+ R\\d+$")
+    @Check(constraints = "misura ~ '^\\d+/\\d+ R\\d+$'")
     private String misura;
 
     @Column(name = "carico")
@@ -34,6 +34,10 @@ public class Gomme {
     @Column(name = "speed")
     @Enumerated(EnumType.STRING)
     private Speed speed;
+
+    @Column(name = "posizione")
+    @Enumerated(EnumType.STRING)
+    private Posizione posizione;
 
     @Column(name = "season", nullable = false)
     @Enumerated(EnumType.STRING)
