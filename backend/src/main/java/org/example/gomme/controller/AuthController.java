@@ -12,6 +12,6 @@ public class AuthController {
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@Valid @RequestBody LoginDTO dto) {
-
+        return null;
     }
 }

@@ -23,5 +23,9 @@ label button {
   display: flex;
   justify-content: flex-end;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 30px;
+}
+
+.cancella-campi {
+  margin-right: auto;
 }
